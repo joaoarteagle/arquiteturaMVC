@@ -1,73 +1,236 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Escola_de_TI V.1
+Repositório da Escola de TI
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Primeiro Projeto – Arquitetura MVC
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 1. Criação do Projeto
+- Criar um **repositório** em uma ferramenta de versionamento, como **GitHub**. ✔
+- Criar um **README** para documentar as **decisões do projeto**, incluindo justificativas e escolhas arquiteturais. ✔
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 2. Definição do Produto
 
-## Installation
+- **Aplicação web**
+- Talvez **Aplicativo mobile**
 
-```bash
-$ npm install
-```
 
-## Running the app
+### 2.1 Objetivo
+Nosso objetivo é intermediar o processo entre o locador e o locatário, focando em uma experiência personalizada e além disso propor outros serviços, afim de facilitar a vida dos nossos usuários.
 
-```bash
-# development
-$ npm run start
+Queremos reunir esses espaços de eventos em uma aplicação Web, fornecendo filtros de busca para ajudar a encontrar o lugar perfeito para você. 
 
-# watch mode
-$ npm run start:dev
+### 2.2 Público-alvo
+- Cliente Tipo 1 (Pessoa que quer alugar um espaço de eventos; Locatário)
+- Cliente Tipo 2 (Pessoa que tem um local para alugar; Locador)
 
-# production mode
-$ npm run start:prod
-```
+### 2.3 Contexto de uso
+Quando alguem quiser organizar um evento, festa ou churrasco em familia.
 
-## Test
+---
 
-```bash
-# unit tests
-$ npm run test
+## 3. Requisitos do Sistema
+Os **requisitos funcionais e não funcionais**, detalhadamente:
+- **Funcionalidades principais** do produto, como:
 
-# e2e tests
-$ npm run test:e2e
+**1. Requisitos Funcionais**
+  
+1.1 Gerenciamento de Usuários
+- Criar perfis de usuário (Locador e Locatário)
+- Cadastro e edição de informações do usuário
+- Autenticação e login utilizando Firebase Authentication
+- Recuperação de senha via Firebase (envio de e-mail de redefinição)
+- Sistema de avaliação de usuários e locais (avaliação por estrelas e comentários)
+- Logout seguro para encerrar a sessão do usuário
 
-# test coverage
-$ npm run test:cov
-```
+1.2 Tela de Login com Firebase
+- Login via email e senha utilizando Firebase Authentication
+- Opção de login social (Google e Facebook) via Firebase
+- Validação de credenciais em tempo real
+- Exibição de mensagens de erro em caso de falha na autenticação
+- Redirecionamento automático após login bem-sucedido
+- Botão de "Esqueci minha senha" com envio de e-mail de redefinição pelo Firebase
 
-## Support
+1.3 Gerenciamento de Locais
+- Cadastro de locais para locação pelo Locador, incluindo:
+- Nome do local
+- Endereço com integração ao Google Maps
+- Capacidade máxima de pessoas
+- Regras e restrições do local
+- Upload de imagens do espaço
+- Valor por hora, diária ou evento
+- Disponibilidade de datas e horários
+- Edição e exclusão de locais cadastrados
+- Visualização detalhada do local pelo Locatário
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1.4 Pesquisa e Filtros
+- Barra de pesquisa para encontrar locais por nome e região
+Filtros por:
+- Localização (cidade e bairro)
+- Capacidade mínima e máxima
+- Preço por período
+- Tipo de evento suportado
+- Exibição de resultados organizados em lista e mapa
 
-## Stay in touch
+1.5 Reserva de Espaços
+- Solicitação de reserva por parte do Locatário
+- Aprovação ou recusa da reserva pelo Locador
+- Notificação sobre o status da reserva
+- Consulta de histórico de reservas para ambos os usuários
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+1.6 Contato com o Locador
+- Botão de contato que redireciona diretamente para o WhatsApp do dono do estabelecimento.
 
-## License
+**2. Requisitos não funcionais**, como:
+- **Desempenho** (tempo de resposta, escalabilidade)
+- **Segurança** (mecanismos de autenticação e autorização)
+- **Usabilidade** (design intuitivo e acessibilidade)
+- **Manutenibilidade** (facilidade de atualização e suporte)
 
-Nest is [MIT licensed](LICENSE).
+2.1 Desempenho e Escalabilidade
+- O sistema deve ser capaz de suportar múltiplos acessos simultâneos
+- Resposta rápida para pesquisa e carregamento de imagens. 
+
+2.2 Segurança
+- Autenticação segura via Firebase Authentication
+- Controle de permissões para acesso a recursos
+- Armazenamento seguro de dados
+
+2.3 Usabilidade
+- Interface intuitiva e responsiva
+- Design adaptado para web e mobile
+- Processo de reserva simples e eficiente
+
+2.4 Manutenção e Evolução
+- Utilização de Firebase para login, banco de dados e armazenamento de imagens
+
+---
+
+## 4. Restrições e Condições
+  
+### Tecnologias
+- NestJs
+- React
+- Swagger
+- Javascript
+- React Native
+- Docker
+- Git
+- MongoDB ou Postgres
+
+### Ferramentas
+- Github
+- Trello
+- Clockify
+- Formulários do Google
+- Google Drive
+- Discord
+- Inteligencias Artificiais
+
+### Restrições Técnicas
+
+Obs: **Restrições Técnicas:**  linguagens de programação e frameworks disponíveis.
+
+### Restrições Não Técnicas
+- Não temos total conhecimento em React
+- Não temos total conhecimento em React Native
+- Não temos total conhecimento em Docker
+
+Obs: **Restrições Não Técnicas:** Orçamento, prazos de entrega, requisitos legais e regulatórios, nossa falta de conhecimento.
+
+## 5. Necessidades dos Stakeholders
+Considerar clientes, usuários finais, gerentes de projeto e desenvolvedores.
+
+Necessidades do Locatário até o momento:
+- Nenhuma
+
+Necessidades do Locador até o momento:
+- Manutenção do local
+
+Necessidades do Gerente do projeto:
+- Nenhuma
+
+Necessidades dos Desenvolvedores:
+- Nenhuma
+
+## 6. Tendências Tecnológicas
+Exploração de novas linguagens, frameworks, plataformas em nuvem e metodologias ágeis.
+
+## 7. Riscos do Projeto
+Avaliação de riscos técnicos, operacionais e de negócios.
+
+---
+
+## 8. Tomada de Decisões
+Vocês devem **documentar** todas as decisões tomadas na definição do projeto. Essas decisões devem abranger:
+- **Seleção de tecnologias e frameworks**
+- **Definição de estruturas de dados**
+- **Escolha de algoritmos**
+- **Adoção de padrões de projeto**
+- **Definição de componentes do sistema**
+- **Modelos de decisão utilizados**, como:
+  - Análise comparativa de alternativas
+  - Prototipagem e experimentação
+  - Análise de risco
+
+Todas as decisões devem ser **justificadas com base nos requisitos do projeto**.
+
+---
+
+## 9. Organização da Arquitetura MVC
+Com base nas funcionalidades identificadas, vamos estruturar o código seguindo o padrão **Modelo-Visão-Controlador (MVC)**. Isso inclui:
+- **Model:** Definir classes e regras de negócio.
+- **View:** Criar interfaces gráficas para apresentação dos dados.
+- **Controller:** Implementar a lógica de controle e interação entre a interface e os dados.
+
+Os **arquivos serão criados e serão organizados dessa forma**.
+
+## Estrutura do Projeto (Backend + NestJS)
+
+    MVC - Model View Controller
+
+    /nomaSolutions
+        /src
+            /entities
+                /locador
+                    locador.module.ts
+                    locador.controller.ts
+                    locador.service.ts
+                    locador.schema.ts
+                /locatario
+                    locatario.module.ts
+                    locatario.controller.ts
+                    locatario.service.ts
+                    locatario.schema.ts
+                /prestador-de-servico
+                    prestador-de-servico.module.ts
+                    prestador-de-servico.controller.ts
+                    prestador-de-servico.service.ts
+                    prestador-de-servico.schema.ts
+            /shared
+                /config
+                database.config.ts
+            main.ts
+            /frontend
+    
+
+---
+
+## 10. Avaliação das Decisões
+Ao finalizar o projeto, os participantes devem revisar suas escolhas com base nos seguintes critérios:
+- **Compatibilidade com os requisitos funcionais e não funcionais**
+- **Coerência entre arquitetura planejada e implementação**
+- **Testes de desempenho, usabilidade e qualidade**
+- **Feedback dos stakeholders e documentação das lições aprendidas**
+
+---
+
+- Criar o projeto
+- Construir o esboço
+- Utilizar a arquitetura MVC
+
+---
+
+# Próxima etapa
+
+**Implementação de um entregável do projeto**
