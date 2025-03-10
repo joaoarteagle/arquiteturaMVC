@@ -1,8 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { Model } from 'mongoose';
+import { Local } from './local.interface';
 
 
 @Injectable()
 export class LocaisService {
+  constructor(
+    @Inject('LOCAL_MODEL')
+    private localModel: Model<Local>,
+  ){}
+
+
+  
   create(createLocaiDto: any) {
     return 'This action adds a new locai';
   }
