@@ -15,18 +15,5 @@ export class LocaisController {
     return this.locaisService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.locaisService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLocaiDto: any) {
-    return this.locaisService.update(+id, updateLocaiDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.locaisService.remove(+id);
-  }
+ 
 }

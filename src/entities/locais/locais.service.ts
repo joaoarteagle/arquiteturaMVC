@@ -6,29 +6,20 @@ import { Local } from './local.interface';
 @Injectable()
 export class LocaisService {
   constructor(
-    @Inject('LOCAL_MODEL')
+    @Inject('LOCAIS_MODEL')
     private localModel: Model<Local>,
   ){}
 
 
-  
-  create(createLocaiDto: any) {
-    return 'This action adds a new locai';
+
+  async create(createLocalDto: any): Promise<Local> {
+    const criado = new this.localModel(createLocalDto);
+    return criado.save();
   }
 
-  findAll() {
-    return `This action returns all locais`;
+  async findAll(): Promise<Local[]> {
+    return this.localModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} locai`;
-  }
-
-  update(id: number, updateLocaiDto: any) {
-    return `This action updates a #${id} locai`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} locai`;
-  }
+ 
 }
