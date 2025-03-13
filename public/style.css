@@ -1,5 +1,10 @@
+*{
+    max-width: 100vw;
+}
 body{
-    padding: 0px 5px
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 .filter-icon {
     width: 24px;
@@ -64,7 +69,7 @@ h1{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 47vw;
+    width: 20vw;
     padding: 3px;
     border: none;
 }
@@ -73,8 +78,8 @@ h1{
 }
 
 .card img{
-    width: 35vw ;
-    height: 35vw;
+    width: 15vw ;
+    height: 15vw;
     object-fit: cover;
 }
 .card a{
@@ -91,12 +96,13 @@ main p{
 }
 
 .container{
+    width: 60vw;
     padding: 15px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 5px;
+    gap: 5vw;
 }
 
 footer{
@@ -112,7 +118,7 @@ footer{
 
 
 .search-input{
-    width: 70vw;
+    width: 50vw;
     height: 5vh;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -153,3 +159,8 @@ footer{
 /* .search-input::after{
     transform: scaleX(1);
 } */
+
+
+main{
+    width: 100vw;
+}
